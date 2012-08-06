@@ -84,13 +84,19 @@ class EventImportFile < ActiveRecord::Base
       event_category = EventCategory.where(:name => category).first || EventCategory.where(:name => 'unknown').first
       event.event_category = event_category
 
-      if event.save!
-        event_import_result.event = event
-        num[:imported] += 1
-        if row_num % 50 == 0
-          Sunspot.commit
-          GC.start
+      begin
+        if event.save!
+          event_import_result.event = event
+          num[:imported] += 1
+          if row_num % 50 == 0
+            Sunspot.commit
+            GC.start
+          end
         end
+      rescue Exception => o
+        event_import_result.error_msg = "FAIL[#{row_num}]: #{o}"
+        Rails.logger.info("event import failed: column #{row_num}")
+        num[:failed] += 1
       end
       event_import_result.save!
       row_num += 1
@@ -183,7 +189,7 @@ class EventImportFile < ActiveRecord::Base
     header = file.first
     rows = CSV.open(tempfile, :headers => header, :col_sep => "\t")
     event_import_result = EventImportResult.new
-    event_import_result.assign_attributes({:event_import_file_id => id, :body => header.join("\t")}, :as => :admin)
+    event_import_result.assign_attributes({:event_import_file_id => id, :body => header.join("\t"), :error_msg => 'HEADER DATA'}, :as => :admin)
     event_import_result.save!
     tempfile.close(true)
     file.close
