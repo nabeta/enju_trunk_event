@@ -7,6 +7,7 @@ event_category_00002:
   note: ""
   created_at: 2008-01-01 16:17:34.642433 +09:00
   position: 2
+  checkin_ng: false
 event_category_00003: 
   name: おはなし会
   display_name: おはなし会
@@ -15,6 +16,7 @@ event_category_00003:
   note: ""
   created_at: 2008-01-01 16:17:45.415487 +09:00
   position: 3
+  checkin_ng: false
 event_category_00004: 
   name: 上映会
   display_name: 上映会
@@ -23,6 +25,8 @@ event_category_00004:
   note: ""
   created_at: 2008-01-01 16:18:08.868680 +09:00
   position: 4
+  checkin_ng: true
+  move_checkin_date: 1
 event_category_00005: 
   name: 講演会
   display_name: 講演会
@@ -31,6 +35,8 @@ event_category_00005:
   note: ""
   created_at: 2008-01-01 16:25:04.251141 +09:00
   position: 5
+  checkin_ng: true
+  move_checkin_date: 2
 event_category_00001: 
   name: unknown  
   display_name: (not specified)
@@ -39,6 +45,7 @@ event_category_00001:
   note: ""
   created_at: 2008-01-01 16:17:12.549565 +09:00
   position: 1
+  checkin_ng: false
 
 # == Schema Information
 #
