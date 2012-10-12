@@ -44,6 +44,7 @@ class EventsController < ApplicationController
     @count[:query_result] = @events.total_entries
 
     respond_to do |format|
+      format.html { render :template => 'opac/events/index', :layout => 'opac' } if params[:opac]
       format.html # index.html.erb
       format.json { render :json => @events }
       format.rss  { render :layout => false }
@@ -59,6 +60,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
 
     respond_to do |format|
+      format.html { render :template => 'opac/events/show', :layout => 'opac' } if params[:opac]
       format.html # show.html.erb
       format.json { render :json => @event }
     end
