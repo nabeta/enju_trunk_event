@@ -5,12 +5,12 @@
 
 <p>
   <strong><%= t('activerecord.models.patron') -%>:</strong>
-  <%= link_to @participate.patron.full_name, @participate.patron %>
+  <%= link_to @participate.patron.full_name, @participate.patron if @participate.patron %>
 </p>
 
 <p>
   <strong><%= t('activerecord.models.event') -%>:</strong>
-  <%= link_to @participate.event.display_name.localize, @participate.event %>
+  <%= link_to @participate.event.display_name.localize, @participate.event if @participate.event %>
 </p>
 
 </div>
