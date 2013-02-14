@@ -5,13 +5,13 @@ require "enju_event/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "enju_event"
+  s.name        = "enju_trunk_event"
   s.version     = EnjuEvent::VERSION
-  s.authors     = ["Kosuke Tanabe"]
-  s.email       = ["tanabe@mwr.mediacom.keio.ac.jp"]
+  s.authors     = ["Reiko Shinozuka"]
+  s.email       = ["shinozuka.reiko@miraitsystems.jp"]
   s.homepage    = "https://github.com/nabeta/enju_event"
   s.summary     = "enju_event plugin"
-  s.description = "Event management for Next-L Enju"
+  s.description = "Event management for EnjuTrunk"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["spec/**/*"]
@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   s.add_dependency "has_scope"
   s.add_dependency "paperclip"
   s.add_dependency "state_machine"
-  s.add_dependency "enju_message", "~> 0.1.14.pre"
+  s.add_dependency "enju_trunk_message", "~> 0.1.14.pre"
   s.add_dependency "enju_core", "~> 0.1.1.pre"
 
   s.add_development_dependency "sqlite3"
