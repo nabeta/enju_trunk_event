@@ -56,7 +56,7 @@ class Event < ActiveRecord::Base
 
   def check_date
     if self.start_at and self.end_at
-      if self.start_at >= self.end_at
+      if self.start_at > self.end_at
         errors.add(:start_at)
         errors.add(:end_at)
       end
