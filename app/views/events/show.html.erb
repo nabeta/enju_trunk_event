@@ -50,8 +50,12 @@
 
 <div id="submenu" class="ui-corner-all">
   <ul>
-    <li><%= link_to t('page.edit'), edit_event_path(@event) if can? :edit, @event -%></li>
-    <li><%= link_to t('page.listing', :model => t('activerecord.models.picture_file')), event_picture_files_path(@event) if can? :create, PictureFile -%></li>
+    <% if can? :edit, @event %>
+      <li><%= link_to t('page.edit'), edit_event_path(@event) %></li>
+    <% end %>
+    <% if can? :create, PictureFile %>
+      <li><%= link_to t('page.listing', :model => t('activerecord.models.picture_file')), event_picture_files_path(@event) %></li>
+    <% end %>
     <li><%= back_to_index(flash[:page_info]) -%></li>
   </ul>
 </div>
