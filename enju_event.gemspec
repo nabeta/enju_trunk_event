@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   s.add_dependency "has_scope"
   s.add_dependency "paperclip"
   s.add_dependency "state_machine"
-  s.add_dependency "enju_trunk_message", "~> 0.1.14.pre"
+#  s.add_dependency "enju_trunk_message", "~> 0.1.14.pre"
   s.add_dependency "enju_core", "~> 0.1.1.pre"
 
   s.add_development_dependency "sqlite3"
