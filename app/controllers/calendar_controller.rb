@@ -1,4 +1,5 @@
 class CalendarController < ApplicationController
+  add_breadcrumb "I18n.t('page.calendar')", 'calendar_path'
   helper_method :get_library, :get_libraries
 
   def index

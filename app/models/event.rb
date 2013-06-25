@@ -15,10 +15,9 @@ class Event < ActiveRecord::Base
   has_many :picture_files, :as => :picture_attachable
   has_many :participates, :dependent => :destroy
   has_many :patrons, :through => :participates
-  has_one :event_import_result
-
+  has_one :event_import_result  
   has_event_calendar
-
+  has_paper_trail
   searchable do
     text :name, :note
     integer :library_id
