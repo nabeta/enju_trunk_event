@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
   s.add_dependency "paperclip"
   s.add_dependency "state_machine"
 #  s.add_dependency "enju_trunk_message", "~> 0.1.14.pre"
-  s.add_dependency "enju_core", "~> 0.1.1.pre"
+  s.add_dependency "enju_core", "~> 0.1.1.pre4"
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "rspec-rails"
@@ -32,5 +32,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency "enju_biblio", "~> 0.1.0.pre6"
   s.add_development_dependency "enju_library", "~> 0.1.0.pre4"
   s.add_development_dependency "enju_manifestation_viewer", "~> 0.1.0.pre2"
-  s.add_development_dependency "sunspot_solr", "~> 2.0.0.pre.120720"
+  s.add_development_dependency "sunspot_solr", "~> 2.0"
 end
